@@ -1,0 +1,16 @@
+{
+    "sondas": [
+        {
+            "codigo": 1,
+            "coordenadaX": 1,
+            "coordenadaY": 3,
+            "direcao": "N"
+        },
+        {
+            "codigo": 2,
+            "coordenadaX": 5,
+            "coordenadaY": 1,
+            "direcao": "E"
+        }
+    ]
+}
