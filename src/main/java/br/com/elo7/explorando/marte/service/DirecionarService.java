@@ -1,6 +1,5 @@
 package br.com.elo7.explorando.marte.service;
 
-import br.com.elo7.explorando.marte.exception.ExplorandoMarteException;
 import br.com.elo7.explorando.marte.model.SondaModel;
 
 import javax.ejb.Local;
