@@ -16,7 +16,7 @@
 * Após subir o WildFly , o serviço POST que será utilizado é "http://servername:port/explorando-marte-web/rest/explorarMarte" e Content-Type "application-json". 
 * Para facilitar o mapeamento do request, utilize o [Request](https://github.com/eltonsimor/explorando-marte/blob/master/request.json), e o retorno será parecido com [Respose](https://github.com/eltonsimor/explorando-marte/blob/master/response.json).
 
->_OBS:_ Nesse projeto, se duas Sondas depois de realizar seus movimentos e a posição final forem iguais somente uma Sonda aparecerá e as demais serão removidas. Indiferente se eles iniciaram nas mesmas posições ou posições diferentes.
+>_OBS:_ Nesse projeto, se duas Sondas depois de realizarem seus movimentos e a posição final forem iguais somente uma Sonda aparecerá e as demais serão removidas. Indiferente se elas iniciaram nas mesmas posições ou posições diferentes.
 
 
 
