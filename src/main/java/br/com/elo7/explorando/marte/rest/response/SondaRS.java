@@ -1,6 +1,6 @@
 package br.com.elo7.explorando.marte.rest.response;
 
-import br.com.elo7.explorando.marte.enuns.DirecaoEnum;
+import br.com.elo7.explorando.marte.enums.DirecaoEnum;
 
 import java.io.Serializable;
 

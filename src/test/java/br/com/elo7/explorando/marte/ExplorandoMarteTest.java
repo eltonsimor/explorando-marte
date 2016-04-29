@@ -1,6 +1,6 @@
 package br.com.elo7.explorando.marte;
 
-import br.com.elo7.explorando.marte.enuns.DirecaoEnum;
+import br.com.elo7.explorando.marte.enums.DirecaoEnum;
 import br.com.elo7.explorando.marte.model.SondaModel;
 import br.com.elo7.explorando.marte.service.DirecionarService;
 import br.com.elo7.explorando.marte.service.MoverService;
@@ -20,7 +20,6 @@ public class ExplorandoMarteTest {
     private MoverService moverOesteService;
     private DirecionarService direcionarEsquerdaService;
     private DirecionarService direcionarDireitaService;
-
 
     @Before
     public void init(){

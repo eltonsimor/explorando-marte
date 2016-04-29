@@ -1,9 +1,9 @@
 package br.com.elo7.explorando.marte.service.impl;
 
+import br.com.elo7.explorando.marte.enums.DirecaoEnum;
 import br.com.elo7.explorando.marte.model.SondaModel;
 import br.com.elo7.explorando.marte.qualifiers.DireitaQualifier;
 import br.com.elo7.explorando.marte.service.DirecionarService;
-import br.com.elo7.explorando.marte.enuns.DirecaoEnum;
 
 import javax.inject.Named;
 

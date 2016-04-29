@@ -1,6 +1,5 @@
 package br.com.elo7.explorando.marte.rest;
 
-import br.com.elo7.explorando.marte.exception.ExplorandoMarteException;
 import br.com.elo7.explorando.marte.model.SondasModel;
 import br.com.elo7.explorando.marte.rest.converter.SondasRQConverter;
 import br.com.elo7.explorando.marte.rest.converter.SondasRSConverter;
@@ -8,6 +7,7 @@ import br.com.elo7.explorando.marte.rest.request.SondasRQ;
 import br.com.elo7.explorando.marte.rest.response.ErrorRS;
 import br.com.elo7.explorando.marte.rest.response.SondasRS;
 import br.com.elo7.explorando.marte.service.ExplorarMarteService;
+import org.apache.log4j.Logger;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -26,6 +26,8 @@ import javax.ws.rs.core.Response;
 @RequestScoped
 public class ExplorarMarteRestService {
 
+    private static final Logger LOG = Logger.getLogger(ExplorarMarteRestService.class);
+
     @Inject
     private ExplorarMarteService explorarMarteService;
 
@@ -39,8 +41,9 @@ public class ExplorarMarteRestService {
             explorarMarteService.explorarMarte(sondasModel);
             SondasRS sondasRS = SondasRSConverter.converter(sondasModel);
             response = Response.ok().entity(sondasRS).build();
-        } catch (ExplorandoMarteException e) {
-            response = Response.ok().entity(new ErrorRS(99999, e.getMessage())).build();
+        } catch (Exception e) {
+            LOG.error(e.getMessage(), e);
+            response = Response.serverError().entity(new ErrorRS(99999, e.getMessage())).build();
         }
 
         return response;

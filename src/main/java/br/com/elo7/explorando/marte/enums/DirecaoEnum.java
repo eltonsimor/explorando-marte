@@ -1,4 +1,4 @@
-package br.com.elo7.explorando.marte.enuns;
+package br.com.elo7.explorando.marte.enums;
 
 /**
  * Created by eltonmoraes on 27/04/16.

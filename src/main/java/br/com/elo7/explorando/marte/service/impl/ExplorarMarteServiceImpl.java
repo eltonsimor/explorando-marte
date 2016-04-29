@@ -1,6 +1,6 @@
 package br.com.elo7.explorando.marte.service.impl;
 
-import br.com.elo7.explorando.marte.exception.ExplorandoMarteException;
+import br.com.elo7.explorando.marte.enums.InstrucoesEnum;
 import br.com.elo7.explorando.marte.model.SondaModel;
 import br.com.elo7.explorando.marte.model.SondasModel;
 import br.com.elo7.explorando.marte.qualifiers.DireitaQualifier;
@@ -33,33 +33,39 @@ public class ExplorarMarteServiceImpl implements ExplorarMarteService {
     private MoverService moverService;
 
     @Override
-    public SondasModel explorarMarte(SondasModel sondas) throws ExplorandoMarteException{
+    public SondasModel explorarMarte(SondasModel sondas){
         definirCodigo(sondas);
         sondas.getSondas().stream().forEach(s -> explorar(s));
-        removerDuplicados(sondas);
+        removerSondaComandasParaMesmasCoordenadas(sondas);
         return sondas;
     }
 
     private SondaModel explorar(SondaModel sonda){
 
         sonda.getInstrucoes().stream().forEach(i -> {
-            switch (i) {
-                case L:
-                    direcionarEsquerdaService.direcionar(sonda);
-                    break;
-                case R:
-                    direcionarDireitaService.direcionar(sonda);
-                    break;
-                case M:
-                    moverService.mover(sonda);
-                    break;
-            }
+            direcionar(i, sonda);
         });
 
         return sonda;
     }
 
-    private void removerDuplicados(SondasModel sondas){
+    private void direcionar(InstrucoesEnum instrucao, SondaModel sonda){
+        switch (instrucao) {
+            case L:
+                direcionarEsquerdaService.direcionar(sonda);
+                break;
+            case R:
+                direcionarDireitaService.direcionar(sonda);
+                break;
+            case M:
+                moverService.mover(sonda);
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void removerSondaComandasParaMesmasCoordenadas(SondasModel sondas){
         List<SondaModel> sondasLista = sondas.getSondas();
         for(int i = 0; i < sondasLista.size(); i++){
             for(int j = 1; j < sondasLista.size(); j++){

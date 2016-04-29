@@ -1,7 +1,7 @@
 package br.com.elo7.explorando.marte.rest.request;
 
-import br.com.elo7.explorando.marte.enuns.DirecaoEnum;
-import br.com.elo7.explorando.marte.enuns.InstrucoesEnum;
+import br.com.elo7.explorando.marte.enums.DirecaoEnum;
+import br.com.elo7.explorando.marte.enums.InstrucoesEnum;
 
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;

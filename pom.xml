@@ -7,6 +7,7 @@
     <groupId>br.com.elo7</groupId>
     <artifactId>explorando-marte</artifactId>
     <version>1.0.0</version>
+    <packaging>war</packaging>
 
     <dependencies>
         <dependency>
