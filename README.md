@@ -14,7 +14,7 @@
 * Foi criado um serviço Rest, onde você envia as Sondas e suas instruções para que elas se movam.
 * Para isso, será necessário enviar o request para o serviço. Primeiro vamos subir o WildFly e realizar o deploy do WAR.
 * Após subir o WildFly , o serviço POST que será utilizado é ``http://servername:port/explorando-marte-web/rest/explorarMarte  |  Content-Type "application-json``` . 
-* Para facilitar o mapeamento do request, utilize o a seguinte estrutura:
+* Para facilitar o mapeamento do request, utilize a seguinte estrutura:
 
 #### Entradas e Saídas:
 
