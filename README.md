@@ -15,7 +15,10 @@
 * Para isso, será necessário enviar o request para o serviço. Primeiro vamos subir o WildFly e realizar o deploy do WAR.
 * Após subir o WildFly , o serviço POST que será utilizado é ``http://servername:port/explorando-marte-web/rest/explorarMarte  |  Content-Type "application-json``` . 
 * Para facilitar o mapeamento do request, utilize o a seguinte estrutura:
-* **Request**
+
+#### Entradas e Saídas:
+
+**Request**
 ```javascript
 {
     "sondas":[
@@ -35,7 +38,7 @@
 }
 ```
 
-* **Response**
+**Response**
 ```javascript
 {
   "sondas": [
