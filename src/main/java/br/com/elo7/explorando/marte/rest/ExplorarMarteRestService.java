@@ -43,7 +43,8 @@ public class ExplorarMarteRestService {
             response = Response.ok().entity(sondasRS).build();
         } catch (Exception e) {
             LOG.error(e.getMessage(), e);
-            response = Response.serverError().entity(new ErrorRS(99999, e.getMessage())).build();
+            String message = "Verifique o seu request (Coordenadas, Instru\u00f5\u00e3os e dire\\u00e7\\u00e3o) das sondas enviadas.";
+            response = Response.serverError().entity(new ErrorRS(99999, message)).build();
         }
 
         return response;
