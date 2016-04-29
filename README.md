@@ -9,6 +9,7 @@
 6. **Java 8** línguagem de programação versão 8.
 7. **Maven** para gerenciamento de dependências.
 8. **EJB** para dependency injection.
+9. **Design Pattern Strategy** padrão de desenvolvimento.
 
 ### Instruções:
 
