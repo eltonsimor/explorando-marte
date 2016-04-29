@@ -58,7 +58,7 @@
   ]
 }
 ```
->_OBS:_ Nesse projeto, se duas Sondas depois de realizarem seus movimentos e a posição final forem iguais somente uma Sonda aparecerá e as demais serão removidas. Indiferente se elas iniciaram nas mesmas posições ou posições diferentes.
+>_OBS:_ Nesse projeto, se duas Sondas depois de realizarem seus movimentos e as suas posições finais forem iguais, somente uma Sonda aparecerá e as demais serão removidas. Indiferente se elas iniciaram nas mesmas posições ou posições diferentes.
 
 
 
