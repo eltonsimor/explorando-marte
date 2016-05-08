@@ -59,6 +59,12 @@
   ]
 }
 ```
+
+### Diagrama
+
+![Diagrama](https://github.com/eltonsimor/explorando-marte/blob/master/diagram.png "Diagrama")
+
+
 >_OBS:_ Nesse projeto, se duas Sondas depois de realizarem seus movimentos e as suas posições finais forem iguais, somente uma Sonda aparecerá e as demais serão removidas. Indiferente se elas iniciaram nas mesmas posições ou posições diferentes.
 
 
