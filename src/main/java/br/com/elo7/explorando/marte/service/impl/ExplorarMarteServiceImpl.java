@@ -12,7 +12,10 @@ import br.com.elo7.explorando.marte.service.MoverService;
 
 import javax.ejb.Remote;
 import javax.inject.Inject;
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Created by eltonmoraes on 27/04/16.
@@ -65,17 +68,22 @@ public class ExplorarMarteServiceImpl implements ExplorarMarteService {
         }
     }
 
-    private void removerSondaComandasParaMesmasCoordenadas(SondasModel sondas){
-        List<SondaModel> sondasLista = sondas.getSondas();
-        for(int i = 0; i < sondasLista.size(); i++){
-            for(int j = 1; j < sondasLista.size(); j++){
-                if(sondasLista.get(i).getCodigo().compareTo(sondasLista.get(j).getCodigo()) != 0 &&
-                   sondasLista.get(i).getCoordenadaX().compareTo(sondasLista.get(j).getCoordenadaX()) == 0 &&
-                   sondasLista.get(i).getCoordenadaY().compareTo(sondasLista.get(j).getCoordenadaY()) == 0){
-                    sondasLista.remove(j);
+    private void removerSondaComandasParaMesmasCoordenadas(SondasModel sondasModel){
+        List<SondaModel> sondas = sondasModel.getSondas();
+        List<SondaModel> sondasList = new ArrayList<>();
+
+        for(int i = 0; i < sondas.size(); i++){
+            for(int j = i + 1; j < sondas.size(); j++){
+                if(sondas.get(i).getCodigo().compareTo(sondas.get(j).getCodigo()) != 0 &&
+                        sondas.get(i).getCoordenadaX().compareTo(sondas.get(j).getCoordenadaX()) == 0 &&
+                        sondas.get(i).getCoordenadaY().compareTo(sondas.get(j).getCoordenadaY()) == 0){
+                    sondasList.add(sondas.get(j));
+                    i++;
                 }
             }
         }
+
+        sondas.removeAll(sondasList);
     }
 
     private void definirCodigo(SondasModel sondasModel){

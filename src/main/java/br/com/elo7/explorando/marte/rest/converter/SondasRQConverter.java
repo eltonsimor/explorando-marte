@@ -18,7 +18,7 @@ public class SondasRQConverter implements Serializable {
         SondasModel sondasModel = new SondasModel();
         sondasModel.setSondas(new ArrayList<>());
 
-        if(sondasModel != null){
+        if(sondasRQ != null){
             sondasRQ.getSondas().stream().forEach(s -> {
                 SondaModel sonda = new SondaModel();
                 sonda.setDirecao(s.getDirecao());
